@@ -1,4 +1,5 @@
 # pepepizzas
+proyecto hecho en ionic/angular con typescript y css usando firebase como base de datos
 dependencias
 npm install firebase @angular/fire
 npm install @ionic/storage-angular
