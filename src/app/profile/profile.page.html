@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mi Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="profile-container">
+  <!-- Contenedor que ocupa la mitad de la pantalla -->
+  <div class="container">
+    <!-- Icono de perfil -->
+    <div class="profile-icon">
+      <ion-icon name="person-circle-outline" size="large"></ion-icon>
+    </div>
+
+    <!-- Nombre del usuario -->
+    <div *ngIf="userName" class="user-name">
+      {{ userName }}
+    </div>
+
+    <!-- Sección Mi cuenta -->
+    <ion-item-divider class="section-divider">
+      <ion-label class="section-title">Mi cuenta</ion-label>
+    </ion-item-divider>
+
+    <!-- Separador Mis Direcciones -->
+    <ion-item class="separator-item" routerLink="/direcciones">
+      <ion-icon name="location-outline" slot="start"></ion-icon>
+      <ion-label>Mis Direcciones</ion-label>
+    </ion-item>
+
+    <!-- Separador Mis Datos -->
+    <ion-item class="separator-item">
+      <ion-icon name="key-outline" slot="start"></ion-icon>
+      <ion-label>Mis Datos</ion-label>
+    </ion-item>
+
+    <!-- Sección Nosotros -->
+    <ion-item-divider class="section-divider">
+      <ion-label class="section-title">Nosotros</ion-label>
+    </ion-item-divider>
+
+    <!-- Separador Contacto -->
+    <ion-item class="separator-item">
+      <ion-icon name="clipboard-outline" slot="start"></ion-icon>
+      <ion-label>Contacto</ion-label>
+    </ion-item>
+
+    <!-- Separador Encuéntranos -->
+    <ion-item class="separator-item" routerLink="/encuentranos">
+      <ion-icon name="storefront-outline" slot="start"></ion-icon>
+      <ion-label>Encuéntranos</ion-label>
+    </ion-item>
+
+    <div *ngIf="isAdmin">
+      <ion-item-divider class="section-divider">
+        <ion-label class="section-title">Admin</ion-label>
+      </ion-item-divider>
+
+      <ion-item class="separator-item" routerLink="/crud">
+        <ion-icon name="create-outline" slot="start"></ion-icon>
+        <ion-label>Crud</ion-label>
+      </ion-item>
+
+      <ion-item class="separator-item" routerLink="/users">
+        <ion-icon name="people-outline" slot="start"></ion-icon>
+        <ion-label>Usuarios</ion-label>
+      </ion-item>
+    </div>
+
+
+    <div class="logout-section">
+      <a href="#" (click)="logout()" class="logout-link">Cerrar cuenta</a>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" [routerLink]="['/menu']">
+      <ion-icon name="pizza"></ion-icon>
+      Menu
+    </ion-tab-button>
+    <ion-tab-button tab="cart">
+      <ion-icon name="cart-outline"></ion-icon>
+      Carrito
+    </ion-tab-button>
+    <ion-tab-button tab="receipt">
+      <ion-icon name="receipt-outline" [routerLink]="['/pedidos']"></ion-icon>
+      Pedidos
+    </ion-tab-button>
+    <ion-tab-button tab="profile" [routerLink]="['/profile']">
+      <ion-icon name="person-outline"></ion-icon>
+      Perfil
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>
+
+

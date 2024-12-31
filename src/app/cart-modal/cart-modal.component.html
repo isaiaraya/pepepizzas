@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Carrito de Compras</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeCart()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Mostrar carrito con productos -->
+  <ion-list *ngIf="cartItems.length > 0; else emptyCart">
+    <ion-item *ngFor="let item of cartItems; let i = index">
+      <ion-thumbnail slot="start">
+        <img [src]="item.image" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ item.name }}</h2>
+        <p>${{ item.price }}</p>
+      </ion-label>
+
+      <!-- Botones para aumentar/disminuir cantidad -->
+      <ion-button fill="clear" (click)="decreaseQuantity(i)" [disabled]="item.quantity === 1">
+        <ion-icon name="remove-circle"></ion-icon>
+      </ion-button>
+
+      <ion-label>{{ item.quantity }}</ion-label>
+
+      <ion-button fill="clear" (click)="increaseQuantity(i)">
+        <ion-icon name="add-circle"></ion-icon>
+      </ion-button>
+
+      <!-- Eliminar producto del carrito -->
+      <ion-button color="danger" (click)="removeItem(i)">
+        Eliminar
+      </ion-button>
+    </ion-item>
+
+    <!-- Botón Ir al Pago con Total, solo visible si hay productos en el carrito -->
+    <ion-button expand="full" color="primary" (click)="goToPayment()">
+      Ir al Pago - {{ getTotal() | currency }}
+    </ion-button>
+  </ion-list>
+
+  <!-- Mensaje de carrito vacío -->
+  <ng-template #emptyCart>
+    <ion-text color="medium" class="ion-text-center">
+      <h2>El carrito está vacío</h2>
+    </ion-text>
+  </ng-template>
+</ion-content>
+

@@ -1,0 +1,27 @@
+ion-content {
+    --background: white; /* Cambia el color de fondo a blanco */
+  }
+  
+  .section-divider {
+    background-color: #f4f4f4; // Color de fondo del separador
+    color: #110202; // Color del texto del separador
+  }
+  
+  .section-title {
+    font-weight: bold; // Hacer el título más grueso
+    font-size: 1.2rem; // Tamaño de fuente del título
+    padding: 10px; // Espaciado alrededor del título
+  }
+  
+  .separator-item {
+    padding: 10px 15px; // Espaciado interno de los ítems
+    font-size: 1rem; // Tamaño de fuente de los ítems
+    --ion-item-background: white; // Cambiar fondo a blanco
+    color: black; // Cambiar color del texto a negro
+  }
+  
+  .separator-item ion-icon {
+    color: #3880ff; // Color del ícono
+  }
+  
+  

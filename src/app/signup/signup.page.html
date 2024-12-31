@@ -1,0 +1,65 @@
+<ion-content>
+  <div class="brand-text">PEPPE'S PIZZAS</div>
+  <div class="login-section ion-padding">
+    <div class="heading ion-padding">
+      <h1>Crea una cuenta</h1>
+      <p>Regístrate para continuar</p>
+    </div>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <div class="login-form ion-padding">
+        <div class="form-input">
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-item>
+            <ion-label position="floating">NOMBRE</ion-label>
+            <ion-input formControlName="name" (ionInput)="validateName($event)"></ion-input>
+          </ion-item>
+          <div *ngIf="signupForm.get('name')?.invalid && (signupForm.get('name')?.dirty || signupForm.get('name')?.touched)">
+            <p class="error-message" *ngIf="signupForm.get('name')?.hasError('required')">El nombre es obligatorio.</p>
+            <p class="error-message" *ngIf="signupForm.get('name')?.hasError('pattern')">El nombre solo debe contener letras.</p>
+          </div>
+        </div>
+        <div class="form-input">
+          <ion-icon name="mail-outline"></ion-icon>
+          <ion-item>
+            <ion-label position="floating">CORREO</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <div *ngIf="signupForm.get('email')?.invalid && (signupForm.get('email')?.dirty || signupForm.get('email')?.touched)">
+            <p class="error-message" *ngIf="signupForm.get('email')?.hasError('required')">El correo es obligatorio.</p>
+            <p class="error-message" *ngIf="signupForm.get('email')?.hasError('email')">Introduce un correo válido.</p>
+          </div>
+        </div>
+        <div class="form-input">
+          <ion-icon name="call-outline"></ion-icon>
+          <ion-item>
+            <ion-label position="floating">TELÉFONO</ion-label>
+            <ion-input type="tel" formControlName="phone" (ionInput)="validatePhone($event)"></ion-input>
+          </ion-item>
+          <div *ngIf="signupForm.get('phone')?.invalid && (signupForm.get('phone')?.dirty || signupForm.get('phone')?.touched)">
+            <p class="error-message" *ngIf="signupForm.get('phone')?.hasError('required')">El teléfono es obligatorio.</p>
+            <p class="error-message" *ngIf="signupForm.get('phone')?.hasError('pattern')">El teléfono debe empezar con 9 y tener 9 dígitos.</p>
+          </div>
+        </div>
+        <div class="form-input">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <ion-item>
+            <ion-label position="floating">CONTRASEÑA</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <div *ngIf="signupForm.get('password')?.invalid && (signupForm.get('password')?.dirty || signupForm.get('password')?.touched)">
+            <p class="error-message" *ngIf="signupForm.get('password')?.hasError('required')">La contraseña es obligatoria.</p>
+            <p class="error-message" *ngIf="signupForm.get('password')?.hasError('minlength')">La contraseña debe tener al menos 10 caracteres.</p>
+            <p class="error-message" *ngIf="signupForm.get('password')?.hasError('pattern')">La contraseña debe contener letras, números y caracteres especiales.</p>
+          </div>
+        </div>
+      </div>
+      <div class="action-buttons ion-padding">
+        <ion-button class="signup-button" size="large" type="submit">Regístrate</ion-button>
+        <p (click)="navigateToResetPassword()">¿Olvidaste tu contraseña?</p>
+        <ion-button class="login-button" size="large" fill="outline" [routerLink]="'/login'">Inicia sesión</ion-button>
+      </div>
+    </form>
+
+    <ion-loading [isOpen]="isLoading" spinner="crescent" message="Cargando..."></ion-loading>
+  </div>
+</ion-content>

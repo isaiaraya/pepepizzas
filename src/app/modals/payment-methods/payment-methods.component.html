@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Métodos de Pago</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closePayment()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item button (click)="selectPaymentMethod('Webpay')" detail>
+      <ion-label>
+        <div class="payment-method">
+          <img src="assets/img/metodospago/1.Webpay_FB_80px.png" alt="Webpay" class="payment-logo" />
+        </div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

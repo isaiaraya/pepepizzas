@@ -1,0 +1,18 @@
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Direcciones Guardadas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item-divider class="section-divider">
+      <ion-label class="section-title">Mis Direcciones</ion-label>
+    </ion-item-divider>
+    
+    <ion-item *ngFor="let address of savedAddresses" class="separator-item">
+      <ion-icon name="location-outline" slot="start"></ion-icon>
+      <ion-label>{{ address }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

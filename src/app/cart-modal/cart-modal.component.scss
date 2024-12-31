@@ -1,0 +1,21 @@
+ion-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+  }
+  
+  ion-thumbnail img {
+    width: 100%;
+  height: auto;
+  }
+  
+  ion-text {
+    padding: 20px;
+  }
+  
+  ion-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  

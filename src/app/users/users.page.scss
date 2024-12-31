@@ -1,0 +1,48 @@
+/* Fondo de toda la página */
+ion-content {
+    --background: #ffffff; /* Fondo blanco */
+  }
+  
+  /* Estilo para la cabecera de la tabla */
+  .header-row {
+    background-color: #f4f4f4; /* Fondo gris claro */
+    font-weight: bold;
+    color: #000000; /* Texto negro */
+    text-align: left;
+    border-bottom: 2px solid #cccccc; /* Línea divisoria */
+  }
+  
+  /* Estilo para las filas de datos */
+  .data-row {
+    background-color: #ffffff; /* Fondo blanco */
+    color: #000000; /* Texto negro */
+    text-align: left;
+    border-bottom: 1px solid #eeeeee; /* Línea divisoria más clara */
+  }
+  
+  /* Estilo para columnas individuales */
+  ion-col {
+    padding: 10px;
+  }
+  
+  /* Estilo para el botón */
+  ion-button {
+    --background: #007bff; /* Color azul para el botón */
+    --color: #ffffff; /* Texto blanco */
+    font-size: 14px;
+    height: 30px;
+    line-height: 1;
+    margin: 0;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .header-row, .data-row {
+      font-size: 14px;
+    }
+  
+    ion-button {
+      font-size: 12px;
+      height: 25px;
+    }
+  }

@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ubicación</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="full-screen-container">
+    <h2 class="pedido-titulo">¿CÓMO QUIERES PEDIR?</h2>
+    <ion-segment [(ngModel)]="selectedSegment">
+      <ion-segment-button value="delivery">
+        <ion-label>DELIVERY</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="retiro">
+        <ion-label>RETIRO EN SUCURSAL</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <div *ngIf="selectedSegment === 'delivery'" class="search-container">
+      <ion-searchbar 
+        placeholder="Buscar dirección..." 
+        class="custom-searchbar"
+        [(ngModel)]="searchQuery"
+        (ionInput)="searchAddress()">
+        <ion-icon 
+          name="location-outline" 
+          slot="start" 
+          class="location-icon"
+          (click)="getCurrentLocation()"></ion-icon>
+      </ion-searchbar>
+
+      <ion-list *ngIf="suggestions.length > 0">
+        <ion-item *ngFor="let suggestion of suggestions" (click)="selectSuggestion(suggestion)">
+          {{ suggestion.description }}
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <!-- Mapa de Google -->
+    <div id="map" class="map-container"></div>
+
+    <ion-checkbox 
+  class="custom-checkbox" 
+  [(ngModel)]="saveAddress"></ion-checkbox>
+<span class="custom-label">Guardar dirección</span>
+    
+
+  </div>
+
+  
+
+
+  <ion-button class="custom-bottom-button" expand="block" (click)="useSelectedAddress()">
+    Usar esta dirección
+  </ion-button>
+</ion-content>
+

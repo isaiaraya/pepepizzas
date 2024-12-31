@@ -1,0 +1,125 @@
+ion-content {
+  --background: #ffffff; /* Fondo blanco */
+}
+
+/* Estilo del ion-toolbar */
+ion-toolbar {
+  --background: #ffffff; /* Fondo blanco */
+  --color: #000000; /* Texto negro */
+}
+
+/* Estilo para ion-cards */
+ion-card {
+  background-color: #090909; /* Fondo blanco */
+  color: #000000; /* Texto negro */
+  box-shadow: none; /* Sin sombra */
+  border-radius: 10px; /* Bordes redondeados */
+  margin: 10px; /* Separación entre cards */
+}
+
+ion-card-header {
+  background-color: #ffffff; /* Fondo blanco */
+  color: #000000; /* Texto negro */
+}
+
+ion-card-title,
+ion-card-subtitle {
+  color: #000000; /* Texto negro */
+}
+
+/* Estilo del contenido dentro de las cards */
+ion-card-content {
+  background-color: #ffffff;
+  color: #000000; /* Texto negro */
+}
+
+/* Estilo para las listas dentro de las cards */
+ion-list {
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 0; /* Eliminar padding predeterminado */
+}
+
+ion-item {
+  --background:#ffffff
+  color: #000000; /* Texto negro */
+  padding: 10px 15px; /* Espaciado interno */
+  border-bottom: 1px solid #e0e0e0; /* Línea divisoria */
+  color: #000000;
+}
+
+/* Ajustes de ion-avatar */
+ion-avatar img {
+  border-radius: 50%; /* Imagen redondeada */
+  width: 40px;
+  height: 40px;
+}
+
+/* Estilo para etiquetas ion-label */
+ion-label {
+  color: #000000; /* Texto negro */
+}
+
+ion-label h2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+ion-label p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Estilo para mensajes vacíos */
+.empty-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 20% auto; /* Centrado vertical */
+  max-width: 90%;
+  padding: 1.5rem;
+  background: #ffffff; /* Fondo blanco */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.empty-message h3 {
+  font-size: 1.4rem;
+  color: #000000; /* Texto negro */
+  margin-bottom: 0.5rem;
+}
+
+.empty-message p {
+  font-size: 1rem;
+  color: #000000; /* Texto negro */
+  margin: 0;
+}
+
+/* Estilo del tab-bar */
+ion-tab-bar {
+  --background: #ffffff; /* Fondo blanco */
+  --color: #000000; /* Iconos en negro */
+  --color-selected: #f90101; /* Icono seleccionado en rojo */
+  --border-color: #ccc; /* Línea superior */
+}
+
+/* Responsividad para pantallas móviles */
+@media (max-width: 480px) {
+  ion-card {
+    margin: 5px;
+  }
+
+  ion-label h2 {
+    font-size: 14px; /* Texto más pequeño */
+  }
+
+  ion-label p {
+    font-size: 12px;
+  }
+
+  .empty-message {
+    margin: 30% auto; /* Ajustar margen en pantallas pequeñas */
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,151 @@
+ion-content {
+  overflow-y: auto;
+  --background: #fff;
+  height: 100%; /* Asegurarse de que el contenido ocupe todo el alto disponible */
+}
+
+
+ion-header,
+ion-toolbar {
+  position: sticky;
+  top: 0;
+}
+
+
+
+ion-segment {
+  display: flex;
+  justify-content: space-between; 
+  overflow-x: auto; 
+}
+
+ion-segment-button {
+  flex: 0 0 auto; 
+  padding: 0 10px;
+  white-space: nowrap; 
+  text-align: center; 
+}
+
+
+
+
+ion-tabs {
+  position: fixed;
+  bottom: 0;
+}
+
+ion-tab-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  --background: #fff;
+  --color: #000;
+  --color-selected: #f90101;
+  --border-color: #ccc;
+}
+
+ion-tab-button {
+  --background: #fff;
+  --color: #000;
+}
+
+ion-icon {
+  color: #000;
+}
+
+ion-card {
+  width: 100%;
+  max-width: 300px;
+  margin: 10px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  z-index: 1;
+}
+
+ion-grid {
+  margin-bottom: 50px; 
+}
+
+ion-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+ion-img {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 5px 0;
+  text-align: center;
+}
+
+p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+  text-align: center;
+}
+
+ion-footer {
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 576px) {
+  ion-card {
+      max-width: 250px;
+      margin: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  ion-card {
+      max-width: 220px;
+      height: auto;
+  }
+
+  ion-img {
+      height: 180px;
+  }
+}
+
+ion-toolbar {
+  --background: rgb(9, 95, 19);
+  height: 80px; /* Aumenta la altura del toolbar */
+}
+
+ion-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar contenido */
+  font-size: 1.2rem;
+  line-height: 1.1;
+  margin: 0; 
+}
+
+ion-button {
+  --padding-start: 0;
+}
+
+.location-text {
+  font-size: 1rem;
+  color: black; 
+  text-align: left;
+  margin-top: 5px;
+  width: 150px; 
+  white-space: nowrap;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+}

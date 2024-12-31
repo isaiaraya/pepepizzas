@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalles de los Pedidos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!-- Mensaje cuando no hay pedidos -->
+<div *ngIf="orders.length === 0" class="empty-message">
+  <ion-text color="medium">
+    <h3>Aún no has hecho ningún pedido.</h3>
+    <p>¡Explora nuestro menú y haz tu primer pedido!</p>
+  </ion-text>
+</div>
+
+  <ion-card *ngFor="let order of orders">  <!-- Iterar sobre todos los pedidos -->
+    <ion-card-header>
+      <ion-card-title>Pedido #{{ order.buyOrder }}</ion-card-title>
+      <ion-card-subtitle>Fecha: {{ order.orderDate }}</ion-card-subtitle> <!-- Fecha del pedido -->
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <!-- Listado de productos del pedido -->
+        <ion-item *ngFor="let item of order.cartItems">
+          <ion-avatar slot="start">
+            <img [src]="item.image" />
+          </ion-avatar>
+          <ion-label>
+            <h2>{{ item.name }}</h2>
+            <p>Cantidad: {{ item.quantity }} | Precio: ${{ item.price }}</p>
+          </ion-label>
+        </ion-item>
+
+        <!-- Total del pedido -->
+        <ion-item>
+          <ion-label><strong>Total:</strong> ${{ order.totalCost }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" [routerLink]="['/menu']">
+      <ion-icon name="pizza"></ion-icon>
+      Menu
+    </ion-tab-button>
+    <ion-tab-button tab="cart">
+      <ion-icon name="cart-outline"></ion-icon>
+      Carrito
+    </ion-tab-button>
+    <ion-tab-button tab="receipt" [routerLink]="['/pedidos']">
+      <ion-icon name="receipt-outline"></ion-icon>
+      Pedidos
+    </ion-tab-button>
+    <ion-tab-button tab="profile" [routerLink]="['/profile']">
+      <ion-icon name="person-outline"></ion-icon>
+      Perfil
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>
+
+

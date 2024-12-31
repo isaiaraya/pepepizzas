@@ -1,0 +1,68 @@
+/* Fondo blanco para la página completa */
+ion-content {
+    --background: #fff;
+}
+
+/* Estilo para los ion-labels dentro de los ion-item */
+.separator-item {
+    --background: #f9f9f9;
+    --border-radius: 8px;
+    --color: #333;
+    display: flex;
+    align-items: center;
+    padding: 10px; /* Espaciado interno */
+    margin: 5px 0; /* Espaciado vertical entre los separator-items */
+    background-color: #f9f9f9; /* Fondo blanco o gris claro explícito */
+}
+
+/* Elimina fondo negro no deseado en ion-item */
+ion-item {
+    --background: transparent;
+    --inner-background: transparent; /* Fondo del contenido interno */
+    background-color: #fff; /* Fondo blanco explícito para el item */
+    color: #333 !important;  /* Asegura que el color del texto sea oscuro y claro */
+}
+
+/* Estilos para la parte del círculo */
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #3880ff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* Estilo para los divisores de las secciones */
+.section-divider {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    padding: 10px; /* Espaciado interno del divisor */
+    margin-bottom: 0; /* Sin margen debajo */
+}
+
+/* Estilo para los títulos de las secciones */
+.section-title {
+    font-size: 1.2em;
+    color: #333 !important;  /* Asegura que los títulos se vean oscuros */
+}
+
+/* Ajuste de separación entre las secciones */
+ion-list {
+    margin-bottom: 20px; /* Espaciado entre diferentes listas */
+    background-color: #f4f4f4;
+}
+
+/* Asegura un fondo blanco en labels */
+ion-label {
+    --color: #333 !important; /* Asegura que los textos dentro de los labels sean de color oscuro */
+    background-color: transparent; /* Fondo transparente explícito */
+}
+
+ion-text[color="danger"] {
+    font-size: 0.9em;
+    margin-left: 10px;
+  }

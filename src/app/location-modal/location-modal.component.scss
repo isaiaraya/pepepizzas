@@ -1,0 +1,109 @@
+.full-screen-container {
+  display: flex;
+  flex-direction: column; /* Mantiene la dirección vertical */
+  justify-content: flex-start; /* Cambiado para alinear el contenido hacia arriba */
+  align-items: center;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  width: 100vw; /* Ocupa toda la anchura de la pantalla */
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
+  padding: 20px; /* Espaciado interno */
+}
+
+.pedido-titulo {
+  color: black; /* Color negro para el título */
+  font-size: 1.5rem; /* Ajusta el tamaño de la fuente según tus necesidades */
+  margin-bottom: 16px; /* Espaciado debajo del título */
+}
+
+ion-segment {
+  --background: transparent; /* Fondo transparente para el ion-segment */
+}
+
+ion-segment-button {
+  --color: green; /* Color de texto verde por defecto */
+  --background: transparent; /* Fondo transparente por defecto */
+}
+
+ion-segment-button[aria-checked="true"] {
+  --background: rgba(50, 205, 50, 0.8); /* Fondo verde lima cuando se selecciona */
+  --color: white; /* Cambiar el color del texto a blanco cuando se selecciona */
+}
+
+ion-segment-button:not([aria-checked="true"]) {
+  --background: transparent; /* Fondo transparente cuando no está seleccionado */
+}
+
+.search-container {
+  margin-top: 20px; /* Espaciado superior para separar de los segmentos */
+  margin-bottom: 16px; /* Espaciado inferior */
+}
+
+.custom-searchbar {
+  --background: transparent; /* Fondo transparente */
+  --color: green; /* Color de texto de la barra de búsqueda */
+  border: 1px solid green; /* Borde verde */
+  border-radius: 20px; /* Bordes redondeados */
+  margin-bottom: 8px; /* Margen inferior */
+}
+
+.location-icon {
+  color: green; /* Color verde para el ícono de localización */
+  cursor: pointer; /* Cambiar cursor cuando pasa el ratón */
+}
+
+.map-container {
+  flex-grow: 1;
+  height: 60vh; /* Ocupa el 60% de la altura total de la pantalla */
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+ion-list {
+  margin-bottom: 16px; /* Espaciado debajo de la lista */
+}
+
+.custom-bottom-button {
+  position: fixed;
+  bottom: 16px;   /* Ajusta la distancia desde la parte inferior */
+  right: 16px;    /* Ajusta la distancia desde el lado derecho */
+  width: auto;    /* Deja que el ancho se ajuste al contenido */
+  min-width: 160px; /* Un ancho mínimo para que el texto quepa bien */
+  height: 50px;   /* Ajusta la altura */
+  border-radius: 10px;  /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de la fuente */
+  padding: 0 20px; /* Espaciado interno */
+  background-color: var(--ion-color-primary);  /* Color de fondo */
+  color: white;    /* Color del texto */
+  z-index: 10;     /* Para que esté por encima de otros elementos */
+}
+
+.custom-bottom-button:hover {
+  background-color: var(--ion-color-primary-shade);  /* Efecto hover */
+}
+
+.custom-checkbox {
+  --background: transparent; /* Fondo transparente */
+  --border-radius: 0; /* Sin borde redondeado */
+  --border-color: black; /* Color del borde */
+  --color: black; /* Color de la marca */
+  --size: 20px; /* Tamaño del checkbox */
+  margin-right: 5px; /* Espacio entre el checkbox y el texto */
+  margin-left: 0; /* Sin margen izquierdo */
+}
+
+.custom-label {
+  color: black; /* Color del texto del checkbox */
+  display: inline-block; /* Asegura que el texto esté alineado con el checkbox */
+}
+
+
+
+
+
+
+
+
+
+

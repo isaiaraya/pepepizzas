@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pedido Confirmado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>
+      ¡Tu pedido ha sido realizado con éxito! Tu ID de pedido es: {{ orderId }}
+    </ion-label>
+  </ion-item>
+
+  <ion-footer>
+    <ion-button expand="full" color="primary" (click)="goToHome()">Ir a Inicio</ion-button>
+  </ion-footer>
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="header-row">
+      <ion-col size="4"><strong>Nombre</strong></ion-col>
+      <ion-col size="4"><strong>Email</strong></ion-col>
+      <ion-col size="2"><strong>Rol</strong></ion-col>
+      <ion-col size="2"><strong>Acciones</strong></ion-col>
+    </ion-row>
+    <ion-row *ngFor="let user of users" class="data-row">
+      <ion-col size="4">{{ user.name }}</ion-col>
+      <ion-col size="4">{{ user.email }}</ion-col>
+      <ion-col size="2">{{ user.role }}</ion-col>
+      <ion-col size="2">
+        <ion-button color="primary" size="small" (click)="editRole(user)">
+          Editar Rol
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+

@@ -1,0 +1,67 @@
+<ion-content>
+  <ion-header>
+    <ion-toolbar> 
+      <ion-buttons slot="start">
+        <ion-button (click)="openLocationModal()">
+          <ion-icon name="location-outline" style="color: green;"></ion-icon> 
+          <span class="location-text">{{ selectedAddress }}</span> 
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button (click)="openCartModal()">
+          <ion-icon name="cart-outline"></ion-icon>
+          <ion-badge *ngIf="cartItemCount > 0" color="danger">{{ cartItemCount }}</ion-badge> <!-- Muestra el contador --> 
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+    <ion-toolbar>
+      <ion-segment  (ionChange)="onSegmentChange($event)">
+        <ion-segment-button value="pizzas">
+          Pizzas
+        </ion-segment-button>
+        <ion-segment-button value="bebidas">
+          Bebidas
+        </ion-segment-button>
+        <ion-segment-button value="acompanamientos">
+          Acompañamientos
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let producto of productos" size="6">
+        <ion-card button color="warning">
+          <ion-card-content class="ion-text-center">
+            <ion-img [src]="producto.imagen"></ion-img>
+            <h2>{{ producto.nombre }}</h2>
+            <p>${{ producto.precio }}</p>
+            <ion-icon name="cart-outline" color="success" style="font-size: 24px;" (click)="addToCart(producto.nombre, producto.precio, producto.imagen)"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" [routerLink]="['/menu']">
+      <ion-icon name="pizza"></ion-icon>
+      Menu
+    </ion-tab-button>
+    <ion-tab-button tab="cart" (click)="openCartModal()">
+      <ion-icon name="cart-outline"></ion-icon>
+      <ion-badge *ngIf="cartItemCount > 0" color="danger">{{ cartItemCount }}</ion-badge> 
+      Carrito
+    </ion-tab-button>
+    <ion-tab-button tab="receipt" [routerLink]="['/pedidos']">
+      <ion-icon name="receipt-outline"></ion-icon>
+      Pedidos
+    </ion-tab-button>
+    <ion-tab-button tab="profile" [routerLink]="['/profile']">
+      <ion-icon name="person-outline"></ion-icon>
+      Perfil
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>
+

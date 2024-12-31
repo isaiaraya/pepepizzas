@@ -1,0 +1,46 @@
+<ion-content>
+  <div class="brand-text">PEPPE'S PIZZAS</div>
+  <div class="login-section ion-padding">
+    <div class="heading ion-padding">
+      <h1>Bienvenidos</h1>
+      <p>Inicia sesión para continuar</p>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="login-form ion-padding">
+        <div class="form-input">
+          <ion-icon name="mail-outline"></ion-icon>
+          <ion-item>
+            <ion-label position="floating">CORREO</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
+            <p class="error-message" *ngIf="loginForm.get('email')?.errors?.['required']">El correo es obligatorio.</p>
+            <p class="error-message" *ngIf="loginForm.get('email')?.errors?.['email']">Introduce un correo válido.</p>
+          </div>
+        </div>
+        <div class="form-input">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <ion-item>
+            <ion-label position="floating">CONTRASEÑA</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+            <p class="error-message" *ngIf="loginForm.get('password')?.errors?.['required']">La contraseña es obligatoria.</p>
+          </div>
+        </div>
+        
+        <!-- Mensaje de error para autenticación -->
+        <div *ngIf="errorMessage" class="error-message" style="color: red;">
+          {{ errorMessage }}
+        </div>
+      </div>
+      <div class="action-buttons ion-padding">
+        <ion-button class="login-button" size="large" type="submit">INICIAR SESIÓN</ion-button>
+        <ion-button class="invited-button" size="large" (click)="continueAsGuest()">CONTINUAR COMO INVITADO</ion-button>
+        <p (click)="navigateToResetPassword()">Olvidaste tu Contraseña?</p>
+        <ion-button class="signup-button" size="large" fill="outline" [routerLink]="['/signup']">REGISTRARSE</ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>
+

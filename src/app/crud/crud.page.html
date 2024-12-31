@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gestión de Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input [(ngModel)]="nombre" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Precio</ion-label>
+    <ion-input [(ngModel)]="precio" type="number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Imagen URL</ion-label>
+    <ion-input [(ngModel)]="imagen" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Categoría</ion-label>
+    <ion-select [(ngModel)]="categoria" (ionChange)="cambiarCategoria()">
+      <ion-select-option value="pizzas">Pizzas</ion-select-option>
+      <ion-select-option value="bebidas">Bebidas</ion-select-option>
+      <ion-select-option value="acompañamientos">Acompañamientos</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="full" (click)="agregarProducto()">Agregar Producto</ion-button>
+
+  
+  <ion-button expand="full" *ngIf="productoEditadoId" (click)="guardarEdicion()">Guardar Cambios</ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let producto of productos">
+      <ion-label>{{ producto.nombre }} - ${{ producto.precio }}</ion-label>
+      <ion-button fill="clear" (click)="editarProducto(producto)">Editar</ion-button>
+      <ion-button fill="clear" (click)="eliminarProducto(producto.id)">Eliminar</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" [routerLink]="['/menu']">
+      <ion-icon name="pizza"></ion-icon>
+      Menu
+    </ion-tab-button>
+    <ion-tab-button tab="cart">
+      <ion-icon name="cart-outline"></ion-icon>
+      Carrito
+    </ion-tab-button>
+    <ion-tab-button tab="receipt">
+      <ion-icon name="receipt-outline"></ion-icon>
+      Pedidos
+    </ion-tab-button>
+    <ion-tab-button tab="profile" [routerLink]="['/profile']">
+      <ion-icon name="person-outline"></ion-icon>
+      Perfil
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

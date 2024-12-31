@@ -1,0 +1,26 @@
+ion-header {
+    --background: #fff; /* Fondo blanco para el encabezado */
+  }
+  
+  ion-toolbar {
+    --background: #fff; /* Fondo blanco para la barra de herramientas */
+    --color: #000; /* Texto en negro */
+  }
+  
+  ion-content {
+    --background: #fff; /* Fondo blanco para el contenido */
+    height: 100%; /* Asegurarse de que el contenido ocupe todo el alto disponible */
+  }
+  
+  ion-footer {
+    --background: #fff; /* Fondo blanco para el pie de página */
+    --border-color: #ccc; /* Línea de borde en el pie de página */
+  }
+  
+  ion-tab-bar {
+    --background: #fff; /* Fondo blanco para la barra de pestañas */
+    --color: #000; /* Color de texto negro */
+    --color-selected: #f90101; /* Color del ícono seleccionado */
+    --border-color: #ccc; /* Color del borde */
+  }
+  
