@@ -13,7 +13,7 @@ para inicializar el servidor para poder hacer los pagos a taves de transbank:  n
 
 
 admin user:
-correo:admin@gmail.com
+correo:admin2@gmail.com
 pass:admin@12345
 
 datos de prueba para webpay Transbank:
